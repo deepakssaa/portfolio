@@ -106,7 +106,7 @@ const ProjectList = [{
 },
 {
     title: "Graphic Design Portfolio", desc: "A Flutter-based web application that showcases a curated collection of my graphic design work, including logos, posters, and social media posts. The designs are categorized for easy browsing, allowing users to quickly find specific types of projects. The app is fully responsive and optimized for both mobile phones and desktop screens, ensuring a seamless user experience across devices. Each design is presented with high-quality visuals, smooth navigation, and an intuitive layout, highlighting both creativity and professional presentation skills.",
-    img: "assets/card3.png", gotolink: "https:\\designsmith.vercel.app", gitlink: "https://github.com/deepakssaa/GraphicDesignPortfolio"
+    img: "assets/card3.png", gotolink: "https://designsmith.vercel.app", gitlink: "https://github.com/deepakssaa/GraphicDesignPortfolio"
 }]
 
 const template = document.querySelector("template.card_template");
