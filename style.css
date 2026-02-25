@@ -774,17 +774,20 @@ button {
     position: absolute;
     width: 300px;
     opacity: 0.5;
+    user-select: none;
     z-index: 1;
 }
 
 .top-bg {
     top: 0;
     left: 0;
+    user-select: none;
 }
 
 .bottom-bg {
     bottom: 0;
     right: 0;
+    user-select: none;
 }
 
 /*==================== ANIMATIONS ====================*/
