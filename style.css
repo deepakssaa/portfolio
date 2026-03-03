@@ -134,6 +134,7 @@ button {
 .header {
     width: 100%;
     background-color: var(--first-color);
+    opacity: 0.9;
     position: fixed;
     top: 0;
     left: 0;
@@ -171,6 +172,7 @@ button {
     .nav__menu {
         position: fixed;
         background-color: var(--first-color);
+        opacity: 0.9;
         top: -100%;
         left: 0;
         width: 100%;
@@ -240,7 +242,7 @@ button {
 
 .home__data {
     z-index: 5;
-    text-align: left;
+    text-align: center;
 }
 
 .home__title {
@@ -262,7 +264,7 @@ button {
 }
 
 .home__description {
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem;
     font-size: 1.15rem;
     color: rgba(242, 242, 242, 0.8);
     line-height: 1.8;
@@ -270,6 +272,7 @@ button {
 }
 
 .home__images {
+    order: -1;
     position: relative;
     height: 300px;
     display: flex;
@@ -842,7 +845,16 @@ button {
         align-items: center;
     }
 
+    .home__data {
+        text-align: left;
+    }
+
+    .home__description {
+        margin-left: 0;
+    }
+
     .home__images {
+        order: 1;
         height: 500px;
     }
 
