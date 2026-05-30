@@ -99,6 +99,13 @@ const ProjectList = [
         gitlink: ""
     },
     {
+        title: "Automated Shipping Label Generator",
+        desc: "Flask-based web utility that parses raw multi-block addresses into print-ready PDF shipping labels, featuring high-fidelity Tamil unicode font rendering via WeasyPrint and standalone desktop executable packaging.",
+        img: "assets/shipping.png",
+        gotolink: "https://address-bill-web-1.onrender.com",
+        gitlink: ""
+    },
+    {
         title: "Speedy Food Pre-booking Platform",
         desc: "Built a production-grade food pre-booking platform using Spring Boot microservices and Java 17, Razorpay integration for 50% partial payments, JWT-based secure authentication, Netflix Eureka service discovery, Supabase integration.",
         img: "assets/speedy.png",
