@@ -44,7 +44,7 @@ sr.reveal(`.about__css`, { delay: 600, scale: 1, origin: 'right' })
 sr.reveal(`.about__figma`, { delay: 400, scale: 1, origin: 'left', rotate: { z: -10 } })
 sr.reveal(`.about__js`, { delay: 300, scale: 1, origin: 'left', rotate: { z: -10 } })
 
-sr.reveal(`.skills__title`)
+sr.reveal(`.skills__group-title`, { delay: 450 })
 sr.reveal(`.skill__item`, { delay: 500, origin: 'bottom', interval: 100 })
 
 sr.reveal(`.contact__container`, { origin: 'top' })
@@ -71,27 +71,61 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive)
 
 /*==================== DYNAMIC PROJECTS ====================*/
-const ProjectList = [{
-    title: "WeatherNow",
-    desc: "A Flutter-based weather application that provides real-time weather updates using the OpenWeather API. Features include location detection, search by city, and a 3-hour interval forecast.",
-    img: "assets/card1.png",
-    getapk: "WeatherNow.apk",
-    gitlink: "https://github.com/deepakssaa/weathernow",
-},
-{
-    title: "Currency Convertor",
-    desc: "A Flutter-based mobile application providing real-time currency conversion using the Exchange Rate API. Features dynamic flags and an intuitive interface for quick conversion.",
-    img: "assets/card2.png",
-    getapk: "CurrencyConvertor.apk",
-    gitlink: "https://github.com/deepakssaa/currency_convertor"
-},
-{
-    title: "Graphic Design Portfolio",
-    desc: "A Flutter-based web application showcasing my creative work including logos and posters. Fully responsive across devices with high-quality visuals.",
-    img: "assets/card3.png",
-    gotolink: "https://designsmith.vercel.app",
-    gitlink: "https://github.com/deepakssaa/GraphicDesignPortfolio"
-}]
+const ProjectList = [
+    {
+        title: "JustBins",
+        desc: "Smart waste management platform that uses IoT-enabled bins, real-time monitoring, and AI-powered route optimization to improve collection efficiency, reduce operational costs, and prevent bin overflows in urban environments.",
+        img: "assets/justbins_project.png",
+        gotolink: "",
+        gitlink: ""
+    },
+    {
+        title: "Web Component Intelligence (WCI)",
+        desc: "Computer vision pipeline for web UI component detection and classification with YOLO, ResNet18, and TorchScript deployment.",
+        img: "assets/wci_project.png",
+        gitlink: ""
+    },
+    {
+        title: "Woo-commerce website",
+        desc: "Developed a custom WooCommerce store with product variations, wishlist, razorpay checkout, inventory management, promotions, and a mobile-responsive design, helping the client generate approximately ₹10K in monthly revenue.",
+        img: "assets/sujaweb.png",
+        gotolink: "https://sujacreation.com",
+    },
+    {
+        title: "E-commerce Mobile App",
+        desc: "Built a cross-platform Flutter e-commerce app with WooCommerce integration, Razorpay payments, OTP authentication, and Firebase push notifications (server side scripted) for a seamless shopping experience. Published in playstore - 100+ installs",
+        img: "assets/sujaapp.png",
+        getapk: "https://play.google.com/store/apps/details?id=com.sujacreations.jewels",
+        gitlink: ""
+    },
+    {
+        title: "Speedy Food Pre-booking Platform",
+        desc: "Built a production-grade food pre-booking platform using Spring Boot microservices and Java 17, Razorpay integration for 50% partial payments, JWT-based secure authentication, Netflix Eureka service discovery, Supabase integration.",
+        img: "assets/speedy.png",
+        gotolink: "",
+        gitlink: ""
+    },
+    {
+        title: "Graphic Design Portfolio",
+        desc: "A Flutter-based web application showcasing my creative work including logos and posters. Fully responsive across devices with high-quality visuals.",
+        img: "assets/card3.png",
+        gotolink: "https://designsmith.vercel.app",
+        gitlink: "https://github.com/deepakssaa/GraphicDesignPortfolio"
+    },
+    {
+        title: "WeatherNow",
+        desc: "A Flutter-based weather application that provides real-time weather updates using the OpenWeather API. Features include location detection, search by city, and a 3-hour interval forecast.",
+        img: "assets/card1.png",
+        getapk: "WeatherNow.apk",
+        gitlink: "https://github.com/deepakssaa/weathernow",
+    },
+    {
+        title: "Currency Convertor",
+        desc: "A Flutter-based mobile application providing real-time currency conversion using the Exchange Rate API. Features dynamic flags and an intuitive interface for quick conversion.",
+        img: "assets/card2.png",
+        getapk: "CurrencyConvertor.apk",
+        gitlink: "https://github.com/deepakssaa/currency_convertor"
+    }]
 
 const template = document.querySelector("template.card_template");
 const container = document.querySelector("#projects .card_container");

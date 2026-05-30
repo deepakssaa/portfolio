@@ -134,7 +134,6 @@ button {
 .header {
     width: 100%;
     background-color: var(--first-color);
-    opacity: 0.9;
     position: fixed;
     top: 0;
     left: 0;
@@ -172,7 +171,6 @@ button {
     .nav__menu {
         position: fixed;
         background-color: var(--first-color);
-        opacity: 0.9;
         top: -100%;
         left: 0;
         width: 100%;
@@ -242,7 +240,7 @@ button {
 
 .home__data {
     z-index: 5;
-    text-align: center;
+    text-align: left;
 }
 
 .home__title {
@@ -264,7 +262,7 @@ button {
 }
 
 .home__description {
-    margin: 0 auto 3rem;
+    margin-bottom: 3rem;
     font-size: 1.15rem;
     color: rgba(242, 242, 242, 0.8);
     line-height: 1.8;
@@ -272,7 +270,6 @@ button {
 }
 
 .home__images {
-    order: -1;
     position: relative;
     height: 300px;
     display: flex;
@@ -505,42 +502,11 @@ button {
     color: var(--white-color);
 }
 
-.skills__group {
-    margin-bottom: 4.5rem;
-}
-
-.skills__group:last-child {
-    margin-bottom: 0;
-}
-
-.skills__group-title {
-    font-size: var(--h3-font-size);
-    font-family: var(--second-font);
-    color: var(--accent-color);
-    text-align: center;
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 0.75rem;
-}
-
-.skills__group-title i {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-}
-
 .skills__content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 160px));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    justify-content: center;
     justify-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-bottom: 1.5rem;
+    padding-bottom: 3rem;
 }
 
 .skill__item {
@@ -604,7 +570,19 @@ button {
     z-index: 1;
 }
 
-/* Media query grid overrides removed in favor of modern auto-fit grid */
+@media screen and (min-width: 768px) {
+    .skills__content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .skills__content {
+        grid-template-columns: repeat(7, 1fr);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
 
 /*==================== PROJECTS ====================*/
 .projects {
@@ -796,20 +774,17 @@ button {
     position: absolute;
     width: 300px;
     opacity: 0.5;
-    user-select: none;
     z-index: 1;
 }
 
 .top-bg {
     top: 0;
     left: 0;
-    user-select: none;
 }
 
 .bottom-bg {
     bottom: 0;
     right: 0;
-    user-select: none;
 }
 
 /*==================== ANIMATIONS ====================*/
@@ -864,16 +839,7 @@ button {
         align-items: center;
     }
 
-    .home__data {
-        text-align: left;
-    }
-
-    .home__description {
-        margin-left: 0;
-    }
-
     .home__images {
-        order: 1;
         height: 500px;
     }
 
