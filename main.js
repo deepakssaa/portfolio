@@ -47,6 +47,7 @@ sr.reveal(`.about__js`, { delay: 300, scale: 1, origin: 'left', rotate: { z: -10
 sr.reveal(`.skills__group-title`, { delay: 450 })
 sr.reveal(`.skill__item`, { delay: 500, origin: 'bottom', interval: 100 })
 
+sr.reveal(`.certifications__container`)
 sr.reveal(`.contact__container`, { origin: 'top' })
 sr.reveal(`.footer`, { origin: 'bottom' })
 
@@ -169,5 +170,79 @@ if (template && container) {
         }
 
         container.appendChild(card);
+    });
+}
+
+/*==================== DYNAMIC CERTIFICATIONS ====================*/
+const CertificationList = [
+    {
+        title: "ServiceNow Certified System Administrator (CSA)",
+        desc: "Certified ServiceNow Administrator skilled in configuration, database administration, user/role management, UI customization, workflows, SLAs, and data imports.",
+        img: "assets/c1.png",
+        pdf: "assets/c1.pdf"
+    }
+];
+
+const certTemplate = document.querySelector("template.cert_template");
+const certContainer = document.querySelector("#certifications .certifications__container-grid");
+
+if (certTemplate && certContainer) {
+    CertificationList.forEach(item => {
+        const card = certTemplate.content.cloneNode(true);
+        card.querySelector("img").src = item.img;
+        card.querySelector("h3").textContent = item.title;
+        card.querySelector("p").textContent = item.desc;
+
+        // Open modal when clicking the "View PDF" button
+        const viewPdfBtn = card.querySelector(".view-pdf-btn");
+        viewPdfBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            openPdfModal(item.title, item.pdf);
+        });
+
+        // Click on the back of the card opens the PDF
+        const cardBack = card.querySelector(".card_back");
+        cardBack.addEventListener("click", () => {
+            openPdfModal(item.title, item.pdf);
+        });
+
+        certContainer.appendChild(card);
+    });
+}
+
+/*==================== PDF MODAL FUNCTIONS ====================*/
+const pdfModal = document.getElementById("pdf-modal");
+const pdfModalTitle = document.getElementById("pdf-modal-title");
+const pdfModalIframe = document.getElementById("pdf-modal-iframe");
+const pdfModalClose = document.getElementById("pdf-modal-close");
+const pdfModalFallback = document.getElementById("pdf-modal-fallback");
+
+function openPdfModal(title, pdfUrl) {
+    if (pdfModal && pdfModalTitle && pdfModalIframe && pdfModalFallback) {
+        pdfModalTitle.textContent = title;
+        pdfModalIframe.src = pdfUrl;
+        pdfModalFallback.href = pdfUrl;
+        pdfModal.classList.add("show");
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+    }
+}
+
+function closePdfModal() {
+    if (pdfModal && pdfModalIframe) {
+        pdfModal.classList.remove("show");
+        pdfModalIframe.src = ""; // Clear src to stop loading PDF in background
+        document.body.style.overflow = "initial"; // Restore background scrolling
+    }
+}
+
+if (pdfModalClose) {
+    pdfModalClose.addEventListener("click", closePdfModal);
+}
+
+if (pdfModal) {
+    pdfModal.addEventListener("click", (e) => {
+        if (e.target === pdfModal) {
+            closePdfModal();
+        }
     });
 }
