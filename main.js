@@ -179,7 +179,7 @@ const CertificationList = [
         title: "ServiceNow Certified System Administrator (CSA)",
         desc: "Certified ServiceNow Administrator skilled in configuration, database administration, user/role management, UI customization, workflows, SLAs, and data imports.",
         img: "assets/c1.png",
-        pdf: "assets/c1.pdf"
+        pdf: "https://www.credly.com/badges/37557512-fbbb-441e-880f-a2e0605604e8/public_url"
     }
 ];
 
